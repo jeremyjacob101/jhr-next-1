@@ -2,7 +2,7 @@ import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-import { supabase } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import { Property } from "@/types/property";
 import { Broker } from "@/types/broker";
 
@@ -13,7 +13,7 @@ export default async function PropertyDetailPage({
 }) {
   const { id } = await params;
 
-  const { data: propertyRow, error: propertyError } = await supabase
+  const { data: propertyRow, error: propertyError } = await supabaseAdmin
     .from("properties")
     .select("*")
     .eq("id", id)
@@ -44,8 +44,7 @@ export default async function PropertyDetailPage({
     `${property.street}, ${property.city}, Israel`
   )}&output=embed`;
 
-  // 2. Fetch the broker by name (matching brokerName)
-  const { data: brokerRow, error: brokerError } = await supabase
+  const { data: brokerRow, error: brokerError } = await supabaseAdmin
     .from("brokers")
     .select("*")
     .eq("name", property.brokerName)
@@ -60,7 +59,6 @@ export default async function PropertyDetailPage({
   return (
     <>
       <NavBar />
-      {/* Backdrop hero */}
       <section
         className="relative h-[260px] bg-cover bg-center mb-0"
         style={{ backgroundImage: `url(${backdropUrl})` }}
@@ -84,18 +82,13 @@ export default async function PropertyDetailPage({
           </p>
         </div>
       </section>
-      {/* Main content */}
       <main className="max-w-5xl mx-auto px-5 pt-5 pb-16 font-sans">
         <section className="grid grid-cols-1 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-7 mt-2">
-          {/* LEFT COLUMN */}
           <div>
-            {/* Hero image */}
             <div
               className="w-full h-80 rounded-2xl bg-cover bg-center mb-5"
               style={{ backgroundImage: `url(${property.heroImageUrl})` }}
             />
-
-            {/* Specs row */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-slate-100 rounded-2xl px-4 py-3 mb-6">
               <div>
                 <span className="text-[11px] uppercase tracking-[0.12em] text-gray-500">
@@ -131,7 +124,6 @@ export default async function PropertyDetailPage({
               </div>
             </div>
 
-            {/* Property overview */}
             <section className="mb-7">
               <h2 className="text-[20px] font-semibold mb-2">
                 Property Overview
@@ -144,7 +136,6 @@ export default async function PropertyDetailPage({
               </p>
             </section>
 
-            {/* Map */}
             <section>
               <h2 className="text-[20px] font-semibold mb-2">Location</h2>
               <p className="text-sm text-gray-600">
@@ -162,7 +153,6 @@ export default async function PropertyDetailPage({
             </section>
           </div>
 
-          {/* RIGHT COLUMN – Broker card */}
           <aside className="md:pl-1">
             {broker && (
               <Link

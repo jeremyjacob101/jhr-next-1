@@ -1,11 +1,11 @@
-import { supabase } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import PropertyCard from "@/components/PropertyCard";
 import { Property } from "@/types/property";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
 export default async function PropertiesPage() {
-  const { data: properties, error } = await supabase
+  const { data: properties, error } = await supabaseAdmin
     .from("properties")
     .select("*")
     .overrideTypes<Property[], { merge: false }>();

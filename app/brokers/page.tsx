@@ -1,11 +1,11 @@
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
-import { supabase } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import { Broker } from "@/types/broker";
 import Footer from "@/components/Footer";
 
 export default async function BrokersPage() {
-  const { data: brokers, error } = await supabase
+  const { data: brokers, error } = await supabaseAdmin
     .from("brokers")
     .select("*")
     .order("name")

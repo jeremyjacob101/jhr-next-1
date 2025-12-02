@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import PropertyCard from "@/components/PropertyCard";
-import { supabase } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import { Broker } from "@/types/broker";
 import { Property } from "@/types/property";
 
@@ -14,7 +14,7 @@ export default async function BrokerDetailPage({
 }) {
   const { id } = await params;
 
-  const { data: broker, error: brokerError } = await supabase
+  const { data: broker, error: brokerError } = await supabaseAdmin
     .from("brokers")
     .select("*")
     .eq("id", id)
@@ -30,7 +30,7 @@ export default async function BrokerDetailPage({
 
   const typedBroker = broker as Broker;
 
-  const { data: properties, error: propertiesError } = await supabase
+  const { data: properties, error: propertiesError } = await supabaseAdmin
     .from("properties")
     .select("*")
     .eq("brokerName", typedBroker.name);
