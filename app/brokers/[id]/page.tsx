@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import PropertyCard from "@/components/PropertyCard";
-import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import { supabaseAdmin } from "@/lib/supabase.server";
 import { Broker } from "@/types/broker";
 import { Property } from "@/types/property";
 

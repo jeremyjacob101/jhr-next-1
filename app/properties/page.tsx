@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import { supabaseAdmin } from "@/lib/supabase.server";
 import PropertyCard from "@/components/PropertyCard";
 import { Property } from "@/types/property";
 import NavBar from "@/components/NavBar";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
-import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import { supabaseAdmin } from "@/lib/supabase.server";
 import { Broker } from "@/types/broker";
 import Footer from "@/components/Footer";
 
