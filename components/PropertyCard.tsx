@@ -4,7 +4,7 @@ import { Property } from "@/types/property";
 export default function PropertyCard({ property }: { property: Property }) {
   return (
     <Link
-      href={`/property/${property.id}`}
+      href={`/properties/${property.id}`}
       className="block no-underline text-inherit group"
     >
       <article className="bg-slate-50 rounded-2xl shadow-lg overflow-hidden flex flex-col transition transform group-hover:-translate-y-1 group-hover:shadow-xl">
