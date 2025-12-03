@@ -6,9 +6,9 @@ export default function PropertyCard({ property }: { property: Property }) {
   return (
     <Link
       href={`/properties/${property.id}`}
-      className="block no-underline text-inherit group"
+      className="block h-full no-underline text-inherit group"
     >
-      <article className="bg-slate-50 rounded-2xl shadow-lg overflow-hidden flex flex-col transition transform group-hover:-translate-y-1 group-hover:shadow-xl">
+      <article className="bg-slate-50 rounded-2xl shadow-lg overflow-hidden flex flex-col h-full transition transform group-hover:-translate-y-1 group-hover:shadow-xl">
         <div className="relative h-52 w-full">
           <Image
             src={property.thumbImageUrl}
@@ -19,32 +19,36 @@ export default function PropertyCard({ property }: { property: Property }) {
           />
         </div>
 
-        <div className="px-5 pt-4 pb-5">
+        <div className="px-5 pt-4 pb-5 flex flex-col flex-1">
           <p className="text-xs uppercase tracking-[0.12em] text-gray-500 mb-1">
             {property.neighborhood}
           </p>
 
-          <h2 className="text-lg font-semibold text-gray-900 mb-1">
-            {property.propertyName}
-          </h2>
+          <div className="mb-1 min-h-13 flex items-center">
+            <h2 className="text-lg font-semibold text-gray-900 leading-snug overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
+              {property.propertyName}
+            </h2>
+          </div>
 
-          <p className="text-sm text-gray-500 mb-2.5">
+          <p className="text-sm text-gray-500 mb-2.5 truncate">
             {property.street}, {property.city}
           </p>
 
-          <p className="text-lg font-bold text-emerald-700 mb-2.5">
-            ₪{property.priceNIS.toLocaleString("he-IL")}
-          </p>
+          <div className="mt-auto">
+            <p className="text-lg font-bold text-emerald-700 mb-2.5">
+              ₪{property.priceNIS.toLocaleString("he-IL")}
+            </p>
 
-          <div className="flex gap-3 text-sm text-gray-700 mb-2">
-            <span>{property.beds} beds</span>
-            <span>{property.baths} baths</span>
-            <span>{property.indoorSqm} m²</span>
+            <div className="flex gap-3 text-sm text-gray-700 mb-2">
+              <span>{property.beds} beds</span>
+              <span>{property.baths} baths</span>
+              <span>{property.indoorSqm} m²</span>
+            </div>
+
+            <p className="text-xs text-gray-500">
+              Listed by {property.brokerName}
+            </p>
           </div>
-
-          <p className="text-xs text-gray-500">
-            Listed by {property.brokerName}
-          </p>
         </div>
       </article>
     </Link>
