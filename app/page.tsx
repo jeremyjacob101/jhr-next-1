@@ -3,7 +3,9 @@ import PropertyCard from "@/components/PropertyCard";
 import { Property } from "@/types/property";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
+import MainInfoCards from "@/components/MainInfoCards";
 
 export default async function HomePage() {
   const { data: properties, error } = await supabaseAdmin
@@ -23,6 +25,7 @@ export default async function HomePage() {
   return (
     <>
       <NavBar />
+
       <section className="relative h-[540px] rounded-b-4xl overflow-hidden mb-10 mx-5">
         <Image
           src="https://yykrealestate.com/assets/Neighborhoods/3/Baka-mob.jpg"
@@ -36,31 +39,51 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-linear-to-b from-black/40 to-black/60" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center px-5 text-center text-white">
+          <p className="text-xs md:text-sm tracking-[0.22em] uppercase text-white/75 mb-3">
+            WELCOME TO
+          </p>
           <h1 className="text-3xl md:text-4xl mb-4 tracking-[0.18em] uppercase">
-            Luxury Residences in Jerusalem
+            JERUSALEM HERITAGE REALTY
           </h1>
           <p className="max-w-2xl text-base md:text-lg leading-relaxed opacity-90">
-            Curated homes in Jerusalem&apos;s most sought-after neighborhoods –
-            German Colony, Talbiya, Baka, and the vibrant City Center.
+            Your Home.
+          </p>
+          <p className="max-w-2xl text-base md:text-lg leading-relaxed opacity-90">
+            Your Heritage.
+          </p>
+          <p className="max-w-2xl text-base md:text-lg leading-relaxed opacity-90">
+            Your Future in Jerusalem.
           </p>
         </div>
       </section>
 
-      <main className="max-w-5xl mx-auto px-5 pb-16 font-sans">
-        <h2 className="text-2xl font-semibold mb-6">
-          Featured Jerusalem Properties
-        </h2>
+      <MainInfoCards />
 
-        {!properties || properties.length === 0 ? (
-          <p className="text-gray-500">No properties found.</p>
-        ) : (
-          <div className="grid gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {properties.map((property) => (
-              <PropertyCard key={property.id} property={property} />
-            ))}
-          </div>
-        )}
-      </main>
+      <section className="mx-5 mb-16 rounded-4xl overflow-hidden bg-linear-to-b from-slate-400 to-slate-300">
+        <main className="max-w-5xl mx-auto px-5 py-14 font-sans">
+          <h2 className="text-2xl font-semibold mb-6 text-slate-900">
+            Featured Jerusalem Properties
+          </h2>
+
+          <>
+            <div className="grid gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {properties.slice(0, 3).map((property) => (
+                <PropertyCard key={property.id} property={property} />
+              ))}
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/properties"
+                className="text-sm font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700"
+              >
+                View all Jerusalem properties
+              </Link>
+            </div>
+          </>
+        </main>
+      </section>
+
       <Footer />
     </>
   );

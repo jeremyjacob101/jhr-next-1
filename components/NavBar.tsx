@@ -9,7 +9,7 @@ export default function NavBar() {
         </Link>
       </div>
 
-      <div className="flex gap-6 text-[15px] font-medium">
+      <div className="flex gap-6 text-[17px] font-medium">
         <Link
           href="/properties"
           className="text-slate-900 hover:text-slate-700 transition-colors"

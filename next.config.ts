@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "imgcdn.stablediffusionweb.com" },
       { protocol: "https", hostname: "www.therealestateconversation.com.au" },
       { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "static.wixstatic.com" },
     ],
   },
 };
