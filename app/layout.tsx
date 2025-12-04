@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "jhr-testing-1",
-  description: "jhr testing page v1",
+  title: "JHR | Jerusalem Heritage Realty",
+  description: "JHR - Jerusalem Heritage Realty - Premium Real Estate in Jerusalem",
 };
 
 export default function RootLayout({
