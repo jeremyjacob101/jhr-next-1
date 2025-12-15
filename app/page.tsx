@@ -238,31 +238,64 @@ export default async function HomePage() {
           priority
           className={styles.heroImg}
         />
+
         <div className={styles.heroOverlay} />
         <div className={styles.heroGlow} />
         <div className={styles.scan} />
 
         <div className={styles.heroInner}>
-          <div className={styles.heroCard}>
+          {/* Top brand mark (logo only, like the reference) */}
+          <div className={styles.heroTop}>
+            <Image
+              src="/jhr-logos/svg/LOGO_%20JHR%20_%20FINAL-04.svg"
+              alt="Jerusalem Heritage Realty"
+              width={140}
+              height={40}
+              priority
+              className={styles.heroLogo}
+            />
+          </div>
+
+          {/* Center title */}
+          <div className={styles.heroCenter}>
             <p className={styles.heroKicker}>WELCOME TO</p>
-
-            <h1 className={styles.heroTitle}>JERUSALEM HERITAGE REALTY</h1>
-
+            <h1 className={styles.heroHeading}>JERUSALEM HERITAGE REALTY</h1>
             <div className={styles.heroRule} />
+          </div>
 
-            <div className={styles.heroCopy}>
+          {/* Bottom copy + arrow */}
+          <div className={styles.heroBottom}>
+            <div className={styles.heroBottomCopy}>
               <p>Your Home.</p>
               <p>Your Heritage.</p>
               <p>Your Future in Jerusalem.</p>
             </div>
+
+            <a
+              href="#jhr-story-start"
+              className={styles.scrollCue}
+              aria-label="Scroll down"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
           </div>
         </div>
-
-        <div className={styles.heroBottomFade} />
       </section>
 
       {/* FULL-HEIGHT STORY SECTIONS */}
-      <div className={styles.storyWrap}>
+      <div id="jhr-story-start" className={styles.storyWrap}>
         {storyBlocks.map((block, idx) => (
           <StorySection key={block.title} block={block} idx={idx} />
         ))}

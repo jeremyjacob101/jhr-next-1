@@ -1,9 +1,15 @@
-/* ---------- HERO ---------- */
+:global(html) {
+    scroll-behavior: smooth;
+}
+
+/* ---------- HERO (Qlear-style layout) ---------- */
 .hero {
     position: relative;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 }
 
 .heroImg {
@@ -17,10 +23,12 @@
 .heroOverlay {
     position: absolute;
     inset: 0;
+    /* lighter in the middle, heavier at the bottom like the reference */
     background: linear-gradient(to bottom,
-            rgba(2, 6, 23, 0.10),
-            rgba(2, 6, 23, 0.55),
-            rgba(2, 6, 23, 0.92));
+            rgba(2, 6, 23, 0.18) 0%,
+            rgba(2, 6, 23, 0.40) 35%,
+            rgba(2, 6, 23, 0.72) 70%,
+            rgba(2, 6, 23, 0.92) 100%);
 }
 
 .heroGlow {
@@ -28,8 +36,8 @@
     inset: 0;
     pointer-events: none;
     background:
-        radial-gradient(900px circle at 18% 18%, rgba(59, 130, 246, 0.22), transparent 55%),
-        radial-gradient(800px circle at 85% 20%, rgba(245, 158, 11, 0.16), transparent 52%);
+        radial-gradient(900px circle at 18% 18%, rgba(59, 130, 246, 0.20), transparent 55%),
+        radial-gradient(800px circle at 85% 20%, rgba(245, 158, 11, 0.12), transparent 52%);
     mix-blend-mode: screen;
     opacity: 0.9;
 }
@@ -52,48 +60,91 @@
     z-index: 1;
     min-height: 100vh;
     display: grid;
-    place-items: center;
-    padding: 0 20px;
+    grid-template-rows: auto 1fr auto;
+    padding: 18px 20px 26px;
+    text-align: center;
 }
 
-.heroCard {
-    width: min(920px, 100%);
-    border-radius: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    background: rgba(2, 6, 23, 0.35);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 40px 140px -80px rgba(0, 0, 0, 0.95);
-    padding: 44px 28px;
-    text-align: center;
-    color: white;
+.heroTop {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.heroLogo {
+    height: 22px;
+    width: auto;
+    opacity: 0.92;
+    filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.45));
+}
+
+.heroCenter {
+    align-self: center;
+    display: grid;
+    gap: 10px;
+    justify-items: center;
 }
 
 .heroKicker {
     font-size: 0.82rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    opacity: 0.78;
-    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.70);
 }
 
-.heroTitle {
-    font-size: clamp(1.9rem, 4.2vw, 3.2rem);
-    letter-spacing: 0.18em;
+.heroHeading {
+    font-size: clamp(2.6rem, 6.2vw, 5rem);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.95);
     text-transform: uppercase;
-    margin-bottom: 18px;
+    line-height: 1.08;
 }
 
 .heroRule {
     height: 1px;
-    width: 112px;
-    margin: 0 auto 18px auto;
-    background: linear-gradient(to right, transparent, rgba(245, 158, 11, 0.75), transparent);
+    width: min(520px, 76vw);
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
+    margin-top: 8px;
 }
 
-.heroCopy {
-    font-size: clamp(1rem, 1.7vw, 1.15rem);
-    line-height: 1.65;
-    opacity: 0.90;
+.heroBottom {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    padding-top: 10px;
+}
+
+.heroBottomCopy {
+    max-width: 860px;
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 16px;
+    line-height: 1.55;
+    text-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+.scrollCue {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(2, 6, 23, 0.35);
+    backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 22px 70px -50px rgba(0, 0, 0, 0.95);
+    transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+    animation: scrollBounce 1.6s ease-in-out infinite;
+}
+
+.scrollCue:hover {
+    transform: translateY(-2px);
+    border-color: rgba(172, 133, 72, 0.55);
+    background: rgba(2, 6, 23, 0.50);
 }
 
 .heroBottomFade {
@@ -223,7 +274,10 @@
 .kickerLine {
     height: 1px;
     flex: 1;
-    background: linear-gradient(to right, transparent, rgba(245, 158, 11, 0.55), transparent);
+    background: linear-gradient(to right,
+            transparent,
+            rgba(245, 158, 11, 0.55),
+            transparent);
 }
 
 .kickerDot {
@@ -332,7 +386,10 @@
 .captionLine {
     height: 1px;
     flex: 1;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.16), transparent);
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.16),
+            transparent);
 }
 
 .captionPip {
@@ -491,6 +548,45 @@
     filter: blur(0);
 }
 
+/* ---------- STICKY NAV (appears after hero) ---------- */
+.stickyNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+    transform: translate3d(0, -120%, 0);
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+        opacity 240ms ease;
+}
+
+.stickyNav[data-visible="true"] {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.stickyNav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.55);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 24px 90px -70px rgba(0, 0, 0, 0.95);
+    pointer-events: none;
+}
+
+.stickyNav>* {
+    position: relative;
+    z-index: 1;
+}
+
 /* ---------- KEYFRAMES ---------- */
 @keyframes kenBurns {
     0% {
@@ -530,6 +626,18 @@
     }
 }
 
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
     .storyLayout {
@@ -540,16 +648,27 @@
     .mediaFrame {
         height: min(54vh, 440px);
     }
+
+    .heroLogo {
+        height: 20px;
+    }
 }
 
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+        scroll-behavior: auto;
+    }
 
     .heroImg,
     .featuredBg,
     .mediaTrack {
         animation: none !important;
         transform: none !important;
+    }
+
+    .scrollCue {
+        animation: none !important;
     }
 
     .mediaFrame:hover .mediaSheen {
@@ -562,49 +681,7 @@
         transform: none !important;
         filter: none !important;
     }
-}
 
-.stickyNav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-
-    /* hidden by default */
-    transform: translate3d(0, -120%, 0);
-    opacity: 0;
-    pointer-events: none;
-
-    transition:
-        transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
-        opacity 240ms ease;
-}
-
-.stickyNav[data-visible="true"] {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* optional: sleek glass bar behind nav without changing NavBar */
-.stickyNav::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(2, 6, 23, 0.55);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow: 0 24px 90px -70px rgba(0, 0, 0, 0.95);
-    pointer-events: none;
-}
-
-.stickyNav>* {
-    position: relative;
-    z-index: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
     .stickyNav {
         transition: none;
         transform: none;
