@@ -25,15 +25,15 @@ const storyBlocks: StoryBlock[] = [
     body: "Navigating Jerusalem's real estate market from abroad can be challenging. At JHR, we understand your unique needs and offer personalized guidance every step of the way. Let us simplify the process for you.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1574586594690-db2449286e33?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Jerusalem stone architecture placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1600&q=70",
+        src: "https://plus.unsplash.com/premium_photo-1699531223990-856f23c13e43?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Jerusalem city view placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=70",
+        src: "https://plus.unsplash.com/premium_photo-1667427810751-5d38b0921237?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Jerusalem street placeholder",
       },
     ],
