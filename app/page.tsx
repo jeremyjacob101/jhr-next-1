@@ -93,15 +93,15 @@ const storyBlocks: StoryBlock[] = [
     body: "Explore our exclusive focus areas such as Rechavia, Mamila, Talbiya, and more. Specializing in new construction, Tama 38 urban renewal projects, penthouses, and private houses in prime central Jerusalem locations.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1707337954290-8378da085d99?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGplcnVzYWxlbSUyMHN1YnVyYnxlbnwwfHwwfHx8MA%3D%3D",
         alt: "Neighborhood placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1645028699892-0f2a7296a4b1?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "City map placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1632487112403-2d011716780c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "City streets placeholder",
       },
     ],
