@@ -51,15 +51,15 @@ const storyBlocks: StoryBlock[] = [
       "This is exactly what we built JHR for. You get a team that understands the city, the buildings, the people, and the way deals really work here.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1765274993134-0cd145a53485?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Elegant interior placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1663785383982-f5484de9fba8?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Luxury apartment placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=70",
+        src: "https://plus.unsplash.com/premium_photo-1684175656172-19a7ee56f0c8?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Modern living room placeholder",
       },
     ],
@@ -75,15 +75,15 @@ const storyBlocks: StoryBlock[] = [
     footer: "If you see yourself in this list, we should talk.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1626303905295-cd61f99cbb04?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Consultation placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1704655295066-681e61ecca6b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Meeting placeholder",
       },
       {
-        src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=70",
+        src: "https://images.unsplash.com/photo-1574513828701-6b92d7fed61d?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Teamwork placeholder",
       },
     ],
