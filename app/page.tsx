@@ -114,6 +114,7 @@ function StorySection({ block, idx }: { block: StoryBlock; idx: number }) {
   const mediaVars: CSSVars = {
     "--speed": `${18 + idx * 2}s`,
     "--dir": flip ? "-1" : "1",
+    "--slides": String(block.images.length * 2),
   };
 
   return (
@@ -181,7 +182,6 @@ function StorySection({ block, idx }: { block: StoryBlock; idx: number }) {
                       src={img.src}
                       alt={img.alt}
                       fill
-                      unoptimized
                       sizes="(max-width: 900px) 100vw, 50vw"
                       className={styles.mediaImg}
                       priority={idx === 0 && i < 2}
@@ -233,7 +233,6 @@ export default async function HomePage() {
           src="https://yykrealestate.com/assets/Neighborhoods/3/Baka-mob.jpg"
           alt="Baka neighborhood in Jerusalem"
           fill
-          unoptimized
           sizes="100vw"
           priority
           className={styles.heroImg}
@@ -342,7 +341,6 @@ export default async function HomePage() {
           src="/jhr-logos/svg/LOGO_%20JHR%20_%20FINAL-09.svg"
           alt="Jerusalem Heritage Realty"
           fill
-          unoptimized
           sizes="100vw"
           className={styles.preFooterImg}
         />

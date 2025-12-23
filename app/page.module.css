@@ -336,15 +336,18 @@
     position: absolute;
     inset: 0;
     display: flex;
-    width: 200%;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: calc(100% * var(--slides));
     animation: slideTrack var(--speed, 18s) linear infinite;
     will-change: transform;
 }
 
 .mediaSlide {
     position: relative;
-    width: 50%;
     height: 100%;
+    flex: 0 0 calc(100% / var(--slides));
+    width: calc(100% / var(--slides));
 }
 
 .mediaImg {
