@@ -220,6 +220,10 @@
     direction: ltr;
 }
 
+.flip .mediaTrack {
+    animation-direction: reverse;
+}
+
 /* TEXT column styling */
 .storyText h2 {
     color: white;
@@ -338,7 +342,7 @@
     display: flex;
     flex-wrap: nowrap;
     height: 100%;
-    width: calc(100% * var(--slides) / 2);
+    width: calc(100% * var(--slides));
     animation: slideTrack var(--speed, 18s) linear infinite;
     will-change: transform;
 }
@@ -346,7 +350,7 @@
 .mediaSlide {
     position: relative;
     height: 100%;
-    flex: 0 0 calc(100% / var(--slides) / 2);
+    flex: 0 0 calc(100% / var(--slides));
     width: calc(100% / var(--slides));
 }
 
@@ -428,12 +432,12 @@
 
 /* direction-aware track (flip with CSS var) */
 @keyframes slideTrack {
-    0% {
-        transform: translateX(0%);
+    from {
+        transform: translate3d(0%, 0, 0);
     }
 
-    100% {
-        transform: translateX(calc(-100% * var(--dir, 1)));
+    to {
+        transform: translate3d(-50%, 0, 0);
     }
 }
 

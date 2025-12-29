@@ -113,7 +113,6 @@ function StorySection({ block, idx }: { block: StoryBlock; idx: number }) {
 
   const mediaVars: CSSVars = {
     "--speed": `${18 + idx * 2}s`,
-    "--dir": flip ? "-1" : "1",
     "--slides": String(block.images.length * 2),
   };
 
