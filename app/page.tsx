@@ -183,8 +183,8 @@ function StorySection({ block, idx }: { block: StoryBlock; idx: number }) {
                       alt={img.alt}
                       fill
                       sizes="(max-width: 900px) 100vw, 50vw"
-                      className={styles.mediaImg}
-                      priority={idx === 0 && i < 2}
+                      loading="eager"
+                      priority
                     />
                   </div>
                 ))}
@@ -234,6 +234,7 @@ export default async function HomePage() {
           alt="Baka neighborhood in Jerusalem"
           fill
           sizes="100vw"
+          loading="eager"
           priority
           className={styles.heroImg}
         />
@@ -333,10 +334,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section
-        className={styles.preFooterImage}
-        style={{ height: "480px" }}
-      >
+      <section className={styles.preFooterImage} style={{ height: "480px" }}>
         <Image
           src="/jhr-logos/svg/LOGO_%20JHR%20_%20FINAL-09.svg"
           alt="Jerusalem Heritage Realty"
