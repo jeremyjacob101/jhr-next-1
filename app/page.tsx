@@ -335,7 +335,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className={styles.preFooterImage} style={{ height: "480px" }}>
+      <section className={styles.preFooterImage} style={{ height: "600px" }}>
         <Image
           src="/jhr-logos/svg/LOGO_%20JHR%20_%20FINAL-09.svg"
           alt="Jerusalem Heritage Realty"
