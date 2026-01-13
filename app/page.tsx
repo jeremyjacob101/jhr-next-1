@@ -8,6 +8,7 @@ import Image from "next/image";
 import Script from "next/script";
 import styles from "./page.module.css";
 import type { CSSProperties } from "react";
+import { montserrat, inter } from "@/app/layout";
 
 type CSSVars = CSSProperties & Record<`--${string}`, string>;
 
@@ -132,20 +133,23 @@ function StorySection({ block, idx }: { block: StoryBlock; idx: number }) {
               <div className={styles.kickerLine} />
             </div>
 
-            <h2 className="jhr-reveal" data-reveal="up">
+            <h2
+              className={`${montserrat.className} jhr-reveal`}
+              data-reveal="up"
+            >
               {block.title}
             </h2>
 
             <div className={`${styles.goldRule} jhr-reveal`} data-reveal="up" />
 
             {block.body ? (
-              <p className="jhr-reveal" data-reveal="up">
+              <p className={`${inter.className} jhr-reveal`} data-reveal="up">
                 {block.body}
               </p>
             ) : null}
 
             {block.bullets?.length ? (
-              <ul className="jhr-reveal" data-reveal="up">
+              <ul className={`${inter.className} jhr-reveal`} data-reveal="up">
                 {block.bullets.map((b) => (
                   <li key={b}>
                     <span className={styles.bulletDot} />
@@ -156,7 +160,7 @@ function StorySection({ block, idx }: { block: StoryBlock; idx: number }) {
             ) : null}
 
             {block.footer ? (
-              <p className="jhr-reveal" data-reveal="up">
+              <p className={`${inter.className} jhr-reveal`} data-reveal="up">
                 {block.footer}
               </p>
             ) : null}

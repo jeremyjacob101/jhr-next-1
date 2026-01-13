@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { MainCard } from "@/types/maincard";
+import { montserrat } from "@/lib/fonts";
 
 const cards: MainCard[] = [
   {
@@ -74,7 +75,7 @@ function InfoCard({
         root: null,
         rootMargin: `0px 0px -${bottomOffset}px 0px`,
         threshold: 0,
-      }
+      },
     );
 
     observer.observe(node);
@@ -114,18 +115,20 @@ function InfoCard({
             ) : null}
 
             <div className="flex-1">
-              <h2 className="text-2xl md:text-3xl font-semibold text-#FAF9F6 leading-tight transition-colors duration-200 group-hover:text-[#ad8548]">
+              <h2
+                className={`${montserrat.className} text-2xl md:text-3xl font-extrabold text-[#FAF9F6] leading-tight transition-colors duration-200 group-hover:text-[#ad8548]`}
+              >
                 {card.title}
               </h2>
 
               {card.body ? (
-                <p className="mt-4 text-[18px] text-#FAF9F6/85 leading-normal">
+                <p className="mt-4 text-[18px] text-[#FAF9F6]/85 leading-normal">
                   {card.body}
                 </p>
               ) : null}
 
               {card.bullets && card.bullets.length ? (
-                <ul className="mt-4 text-[16.5px] space-y-0.5 list-disc list-inside text-#FAF9F6/90">
+                <ul className="mt-4 text-[16.5px] space-y-0.5 list-disc list-inside text-[#FAF9F6]/90">
                   {card.bullets.map((item) => (
                     <li key={item} className="leading-relaxed">
                       {item}
@@ -135,7 +138,7 @@ function InfoCard({
               ) : null}
 
               {card.footer ? (
-                <p className="mt-4 text-[18px] text-#FAF9F6/85 leading-normal">
+                <p className="mt-4 text-[18px] text-[#FAF9F6]/85 leading-normal">
                   {card.footer}
                 </p>
               ) : null}
