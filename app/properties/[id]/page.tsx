@@ -65,7 +65,7 @@ export default async function PropertyDetailPage({
           className="object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-linear-to-b from-black/40 to-black/75" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#0b1f3a]/40 to-[#0b1f3a]/75" />
 
         <div className="relative z-10 max-w-5xl mx-auto h-full flex flex-col justify-end px-5 pb-6 text-white">
           <p className="mb-1">
