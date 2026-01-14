@@ -157,9 +157,9 @@ export default function ContactPage() {
                   Phone:{" "}
                   <a
                     className="underline underline-offset-2 hover:no-underline"
-                    href="tel:+97225551212"
+                    href="tel:+972534545304"
                   >
-                    +972-2-555-1212
+                    +972-534545304
                   </a>
                 </p>
                 <p>
@@ -168,7 +168,7 @@ export default function ContactPage() {
                     className="underline underline-offset-2 hover:no-underline"
                     href="mailto:office@JerusalemHeritageRealty.com"
                   >
-                    office@JerusalemHeritageRealty.com
+                    office@jhrisrael.com
                   </a>
                 </p>
               </div>
