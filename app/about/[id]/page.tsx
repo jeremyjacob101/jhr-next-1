@@ -43,17 +43,17 @@ export default async function BrokerDetailPage({
   const safeProperties = (properties as Property[]) ?? [];
 
   const brokerImageUrl = (path?: string | null) => {
-  const safePath = path?.trim() ? path.trim() : "defaultAvatar.jpg";
-  return supabaseAdmin.storage.from("brokers").getPublicUrl(safePath).data.publicUrl;
-};
+    const safePath = path?.trim() ? path.trim() : "defaultAvatar.jpg";
+    return supabaseAdmin.storage.from("brokers").getPublicUrl(safePath).data
+      .publicUrl;
+  };
 
-const brokerPhoto = brokerImageUrl(broker?.photoUrl);
-
+  const brokerPhoto = brokerImageUrl(broker?.photoUrl);
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <NavBar />
-      <main className="max-w-5xl mx-auto px-5 py-10">
+      <main className="flex-1 min-h-0 max-w-5xl mx-auto px-5 py-10">
         <Link href="/about" className="text-sm text-gray-600 hover:underline">
           ← Back to about
         </Link>
@@ -92,6 +92,6 @@ const brokerPhoto = brokerImageUrl(broker?.photoUrl);
         )}
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

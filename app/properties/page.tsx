@@ -62,10 +62,12 @@ export default async function PropertiesPage({
 
   if (error) {
     return (
-      <main className="p-8">
-        <h1 className="text-2xl font-semibold mb-4">Listings</h1>
-        <p className="text-red-600 mb-4">Error loading listings.</p>
-      </main>
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-1 min-h-0 p-8">
+          <h1 className="text-2xl font-semibold mb-4">Listings</h1>
+          <p className="text-red-600 mb-4">Error loading listings.</p>
+        </main>
+      </div>
     );
   }
 

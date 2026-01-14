@@ -27,14 +27,19 @@ export default async function ProjectsPage({
     qy = qy.order("name", { ascending: true });
   }
 
-  const { data: projects, error } = await qy.overrideTypes<Project[], { merge: false }>();
+  const { data: projects, error } = await qy.overrideTypes<
+    Project[],
+    { merge: false }
+  >();
 
   if (error) {
     return (
-      <main className="p-8">
-        <h1 className="text-2xl font-semibold mb-4">Projects</h1>
-        <p className="text-red-600 mb-4">Error loading projects.</p>
-      </main>
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-1 min-h-0 p-8">
+          <h1 className="text-2xl font-semibold mb-4">Projects</h1>
+          <p className="text-red-600 mb-4">Error loading projects.</p>
+        </main>
+      </div>
     );
   }
 
@@ -52,10 +57,10 @@ export default async function ProjectsPage({
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <NavBar />
 
-      <main className="max-w-5xl mx-auto px-5 py-16 font-sans">
+      <main className="flex-1 min-h-0 max-w-5xl mx-auto px-5 py-16 font-sans">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
           <div>
             <h1 className="text-2xl font-semibold">Projects</h1>
@@ -114,7 +119,8 @@ export default async function ProjectsPage({
                 <div className="rounded-2xl bg-slate-50 border border-slate-100 p-5 shadow-sm hover:shadow-md transition cursor-pointer">
                   <h3 className="text-lg font-semibold">{p.name}</h3>
                   <p className="text-sm text-gray-500 mt-1">
-                    {counts.get(p.id) ?? 0} property{(counts.get(p.id) ?? 0) === 1 ? "" : "ies"}
+                    {counts.get(p.id) ?? 0} property
+                    {(counts.get(p.id) ?? 0) === 1 ? "" : "ies"}
                   </p>
                   <p className="text-xs text-gray-400 mt-3">View project →</p>
                 </div>
@@ -125,6 +131,6 @@ export default async function ProjectsPage({
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

@@ -79,9 +79,9 @@ export default async function ProjectDetailPage({
 
   if (error) {
     return (
-      <>
+      <div className="min-h-screen flex flex-col">
         <NavBar />
-        <main className="max-w-5xl mx-auto px-5 py-10">
+        <main className="flex-1 min-h-0 max-w-5xl mx-auto px-5 py-10">
           <p className="text-red-600">Error loading project properties.</p>
           <Link
             href="/projects"
@@ -91,14 +91,14 @@ export default async function ProjectDetailPage({
           </Link>
         </main>
         <Footer />
-      </>
+      </div>
     );
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <NavBar />
-      <main className="max-w-5xl mx-auto px-5 py-16 font-sans">
+      <main className="flex-1 min-h-0 max-w-5xl mx-auto px-5 py-16 font-sans">
         <Link
           href="/projects"
           className="text-sm text-gray-600 hover:underline"
@@ -126,6 +126,6 @@ export default async function ProjectDetailPage({
         )}
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -14,9 +14,9 @@ export default function ContactPage() {
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <NavBar />
-      <main className="max-w-5xl mx-auto px-5 pt-10 pb-16 font-sans">
+      <main className="flex-1 min-h-0 max-w-5xl mx-auto px-5 pt-10 pb-16 font-sans">
         <h1 className="text-[30px] font-semibold mb-2">Contact Us</h1>
 
         <p className="text-[15px] text-gray-600 mb-7">
@@ -187,6 +187,6 @@ export default function ContactPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
