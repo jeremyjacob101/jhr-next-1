@@ -48,7 +48,22 @@ export default async function AboutPage() {
       <NavBar />
 
       <main className="flex-1 min-h-0 max-w-5xl mx-auto px-5 py-10">
-        <h1 className="text-3xl font-semibold mb-8">Meet the Team</h1>
+        <section className="mb-10">
+          <h1 className="text-3xl font-semibold mb-4">
+            Jerusalem Heritage Realty is built for people coming from abroad
+          </h1>
+          <p className="text-base text-slate-700 leading-relaxed mb-4">
+            Most of our clients are like you. American, French, English or from
+            other communities abroad.
+          </p>
+          <p className="text-base text-slate-700 leading-relaxed">
+            You want someone in Jerusalem who gets your life, your standards,
+            and your concerns, and who can also speak the language of local
+            owners, lawyers, and brokers. That is what we do.
+          </p>
+        </section>
+
+        <h2 className="text-3xl font-semibold mb-8">Meet the Team</h2>
 
         <div className="grid gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {brokers.map((b) => (

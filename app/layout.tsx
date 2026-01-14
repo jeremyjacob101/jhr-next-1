@@ -10,13 +10,15 @@ const geistSans = Geist({
 export const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
-  weight: ["500"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
 });
 
 export const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["300"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
 });
 
 const geistMono = Geist_Mono({
@@ -38,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>

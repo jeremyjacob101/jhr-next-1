@@ -1,17 +1,23 @@
 @import "tailwindcss";
-@import "@fontsource/inter/latin-100.css";
-@import "@fontsource/inter/latin-200.css";
-@import "@fontsource/inter/latin-300.css";
-@import "@fontsource/inter/latin-400.css";
-@import "@fontsource/inter/latin-500.css";
-
 :root {
   --background: #ededed;
   --foreground: #0a0a0a;
+  --navy: #0b1f3a;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: sans-serif, Arial, Helvetica;
+  font-family: var(--font-inter), "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-montserrat), "Montserrat", "Segoe UI", Arial,
+    sans-serif;
 }
