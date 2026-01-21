@@ -5,7 +5,7 @@ import { supabaseAdmin } from "@/lib/supabase.server";
 import { Broker } from "@/types/broker";
 import Footer from "@/components/Footer";
 
-export default async function AboutPage() {
+export default async function TeamPage() {
   const { data: brokers, error } = await supabaseAdmin
     .from("brokers")
     .select("*")
@@ -69,7 +69,7 @@ export default async function AboutPage() {
           {brokers.map((b) => (
             <Link
               key={b.id}
-              href={`/about/${b.id}`}
+              href={`/team/${b.id}`}
               className="no-underline text-inherit"
             >
               <div className="bg-slate-50 px-5 py-6 rounded-2xl shadow-md text-center hover:shadow-lg transition">

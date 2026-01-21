@@ -35,10 +35,10 @@ export default function NavBar() {
           Projects
         </Link>
         <Link
-          href="/about"
+          href="/team"
           className="text-[#ac8548] hover:text-[#c79a55] transition-colors"
         >
-          About
+          Team
         </Link>
         <Link
           href="/contact"

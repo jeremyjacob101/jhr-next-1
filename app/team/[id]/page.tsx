@@ -54,8 +54,8 @@ export default async function BrokerDetailPage({
     <div className="min-h-screen flex flex-col">
       <NavBar />
       <main className="flex-1 min-h-0 max-w-5xl mx-auto px-5 py-10">
-        <Link href="/about" className="text-sm text-gray-600 hover:underline">
-          ← Back to about
+        <Link href="/team" className="text-sm text-gray-600 hover:underline">
+          ← Back to team
         </Link>
 
         <div className="flex flex-col md:flex-row gap-6 mt-6 mb-8 items-center md:items-start">
