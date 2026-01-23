@@ -5,12 +5,26 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
 export default function ContactPage() {
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
 
-    form.reset();
-    alert("Thanks! We received your message and a broker will reach out.");
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      form.reset();
+      alert("Thanks! We received your message and a broker will reach out.");
+    } else {
+      const data = await res.json().catch(() => ({}));
+      alert(data?.error ? `Error: ${data.error}` : "Something went wrong.");
+    }
   }
 
   return (
