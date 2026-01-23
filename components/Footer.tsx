@@ -11,7 +11,7 @@ export default function Footer() {
 
         {/* Contact should be second on mobile, right on desktop */}
         <div className="order-2 md:order-3 text-sm text-gray-400 md:text-right">
-          <p>Phone: +972-534545304</p>
+          <p>Phone: +972-53-454-5304</p>
           <p>Email: office@jhrisrael.com</p>
         </div>
 

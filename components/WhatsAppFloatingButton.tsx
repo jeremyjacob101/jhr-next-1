@@ -58,7 +58,7 @@ export default function WhatsAppFloatingButton() {
         priority
       />
       <span className="text-sm font-semibold whitespace-nowrap">
-        WhatsApp Us
+        Schedule A Call
       </span>
     </a>
   );

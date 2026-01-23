@@ -32,7 +32,7 @@ export default async function BrokerDetailPage({
   const typedBroker = broker as Broker;
 
   const { data: properties, error: propertiesError } = await supabaseAdmin
-    .from("properties")
+    .from("properties3")
     .select("*, broker:brokers(*)")
     .eq("broker_id", typedBroker.id);
 
@@ -72,7 +72,9 @@ export default async function BrokerDetailPage({
           <div className="text-center md:text-left">
             <h1 className="text-3xl font-semibold mb-1">{typedBroker.name}</h1>
             <p className="text-sm text-gray-500 mb-2">{typedBroker.area}</p>
-            <p className="text-sm text-gray-700">{typedBroker.phone}</p>
+            <p className="text-sm text-gray-700"><strong>IL </strong>{typedBroker.phone}</p>
+            {typedBroker.phone_us && <p className="text-sm text-gray-700"><strong>US </strong>{typedBroker.phone_us}</p>}
+            <p className="text-sm text-gray-700 mt-3">{typedBroker.role}</p>
             <p className="text-sm text-gray-700">{typedBroker.email}</p>
           </div>
         </div>

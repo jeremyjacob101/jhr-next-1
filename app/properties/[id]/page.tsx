@@ -14,7 +14,7 @@ export default async function PropertyDetailPage({
   const { id } = await params;
 
   const { data: propertyRow, error: propertyError } = await supabaseAdmin
-    .from("properties")
+    .from("properties3")
     .select("*, broker:brokers(*)")
     .eq("id", id)
     .maybeSingle();
@@ -194,7 +194,15 @@ export default async function PropertyDetailPage({
                   </div>
 
                   <div className="text-sm mb-3">
-                    <p>{broker.phone}</p>
+                    <p>
+                      <strong>IL</strong> {broker.phone}
+                    </p>
+                    {broker.phone_us && (
+                      <p>
+                        <strong>US</strong> {broker.phone_us}
+                      </p>
+                    )}
+                    <p className="mt-3">{broker.role}</p>
                     <p>{broker.email}</p>
                   </div>
 

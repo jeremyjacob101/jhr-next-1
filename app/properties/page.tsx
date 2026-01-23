@@ -23,7 +23,7 @@ export default async function PropertiesPage({
 }) {
   const sp = await searchParams;
 
-  let query = supabaseAdmin.from("properties").select("*, broker:brokers(*)");
+  let query = supabaseAdmin.from("properties3").select("*, broker:brokers(*)");
 
   const q = sp.q?.trim();
   if (q) query = query.ilike("propertyName", `%${q}%`);

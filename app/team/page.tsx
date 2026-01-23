@@ -9,7 +9,7 @@ export default async function TeamPage() {
   const { data: brokers, error } = await supabaseAdmin
     .from("brokers")
     .select("*")
-    .order("name")
+    .order("id")
     .overrideTypes<Broker[], { merge: false }>();
 
   const brokerImageUrl = (path?: string | null) => {
@@ -86,8 +86,16 @@ export default async function TeamPage() {
                 <h2 className="text-xl font-semibold mb-1">{b.name}</h2>
                 <p className="text-sm text-gray-500 mb-3">{b.area}</p>
 
-                <p className="text-sm text-gray-700">{b.phone}</p>
-                <p className="text-sm text-gray-700">{b.email}</p>
+                <p className="text-sm text-gray-700">
+                  <strong>IL</strong> {b.phone}
+                </p>
+
+                <p className="text-sm text-gray-700">
+                  {b.phone_us &&<strong>US</strong>} {b.phone_us ?? "\u00A0"}
+                </p>
+
+                <p className="text-sm text-gray-700 mt-3">{b.role}</p>
+                <p className="text-sm text-gray-700 mt-3">{b.email}</p>
               </div>
             </Link>
           ))}

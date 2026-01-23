@@ -214,7 +214,7 @@ function StorySection({ block, idx }: { block: StoryBlock; idx: number }) {
 
 export default async function HomePage() {
   const { data: properties, error } = await supabaseAdmin
-    .from("properties")
+    .from("properties3")
     .select("*, broker:brokers(*)")
     .overrideTypes<Property[], { merge: false }>();
 
