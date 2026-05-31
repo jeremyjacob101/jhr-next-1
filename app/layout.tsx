@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import AccessibilityControls from "@/components/AccessibilityControls";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +49,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <ExitIntentPopup />
         <AccessibilityControls />
         <WhatsAppFloatingButton />
       </body>
