@@ -4,6 +4,7 @@ import "./globals.css";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import AccessibilityControls from "@/components/AccessibilityControls";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${inter.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
